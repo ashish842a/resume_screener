@@ -1,0 +1,15 @@
+Position: Machine Learning Developer
+
+Responsibilities:
+- Design and develop machine learning models and algorithms.
+- Work with large datasets to preprocess and clean data.
+- Optimize model performance for production environments.
+- Collaborate with data scientists, software engineers, and product teams.
+- Stay updated with advancements in machine learning and AI research.
+
+Requirements:
+- Proficiency in Python and machine learning frameworks like TensorFlow, PyTorch, or Scikit-learn.
+- Strong understanding of statistics, linear algebra, and data structures.
+- Experience with natural language processing (NLP) or computer vision is a plus.
+- Familiarity with cloud platforms like AWS, GCP, or Azure.
+- Bachelor’s or Master’s degree in Computer Science, Data Science, or a related field.

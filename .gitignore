@@ -1,0 +1,33 @@
+# Python compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+env/
+
+# Uploads folder
+uploads/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# IDE and editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.~*
+*~
+
+# PyCharm specific
+*.iml

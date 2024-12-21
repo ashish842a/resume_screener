@@ -1,0 +1,193 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    width: 100%;
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 1rem;
+    
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.form-section {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+input[type="file"]:hover {
+    border-color: #4CAF50;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+/* Additional styling for the results section */
+.result-section {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.result-section h2 {
+    font-size: 1.8rem;
+    color: #4CAF50;
+}
+
+.result-section p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.result-section a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.result-section a:hover {
+    background-color: #45a049;
+}
+
+/* Small devices - Adjustments for screens under 480px */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .result-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .result-section p {
+        font-size: 1rem;
+    }
+}

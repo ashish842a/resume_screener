@@ -1,0 +1,15 @@
+Position: Web Developer
+
+Responsibilities:
+- Build and maintain web applications using modern frameworks.
+- Write clean, scalable, and maintainable code.
+- Implement responsive design for cross-platform compatibility.
+- Optimize web performance and improve loading times.
+- Debug and resolve technical issues.
+
+Requirements:
+- Proficiency in HTML, CSS, JavaScript, and frameworks like React
+- Experience with backend development using Node.js,Flask.
+- Familiarity with databases like MongoDB
+- Understanding  Git.
+- Bachelor’s degree in Computer Science or related field, or equivalent experience.
