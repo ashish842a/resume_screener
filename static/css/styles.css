@@ -1,0 +1,423 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.473);
+    padding: 0.8rem 1.5rem;
+    color: black;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.navbar .nav-links li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: black;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.navbar .nav-links li a:hover {
+    color: #007bff;
+}
+
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    background-color: black;
+    height: 4px;
+    width: 25px;
+    margin: 3px 0;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: initial;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #007bff;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+    }
+    .navbar .nav-links li a {
+        color: white;
+    }
+
+    .nav-links.active {
+        display: none;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+}
+
+/* Hero Section */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.3rem;
+    margin-bottom: 1rem;
+}
+
+#detection {
+    color: #007bff;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.7;
+}
+
+.hero-btn {
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.hero-btn:hover {
+    background-color: #ffaa00;
+    transform: scale(1.05);
+}
+
+/* Section Containers */
+.section {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Buttons */
+.button-container {
+    margin-bottom: 2rem;
+}
+
+.button {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Image Processing Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.container .section {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.container .section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Resume Upload Section Styling */
+#resume-upload {
+    padding: 2rem;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#resume-upload form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#resume-upload .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#resume-upload label {
+    font-weight: bold;
+    color: #333;
+}
+
+#resume-upload input[type="file"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 1rem;
+}
+
+#resume-upload button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#resume-upload button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Similarity Score Section Styling */
+#result-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#result-section h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+#result-section p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#result-section strong {
+    color: #ffaa00;
+}
+
+#result-section a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#result-section a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    #resume-upload, #result-section {
+        padding: 1rem;
+    }
+
+    #resume-upload form {
+        gap: 1rem;
+    }
+
+    #resume-upload button, #result-section a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #resume-upload, #result-section {
+        padding: 0.5rem;
+    }
+
+    #resume-upload label {
+        font-size: 0.9rem;
+    }
+
+    #resume-upload input[type="file"] {
+        font-size: 0.9rem;
+    }
+
+    #resume-upload button, #result-section a {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* About Us Section */
+#about {
+    padding: 2rem 1rem;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+
+#about p:not(:last-of-type) {
+    margin-bottom: 1.5rem;
+}
+
+#about p strong {
+    color: #007bff;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+footer .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #ffaa00;
+}

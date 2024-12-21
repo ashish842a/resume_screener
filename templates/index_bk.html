@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Screener</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Resume Screener</h1>
+            <p>Match your resume with the perfect job description</p>
+        </header>
+
+        <!-- Form Section -->
+        <section class="form-section">
+            <form action="/screen" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="resume">Upload Resume (PDF, JPG, JPEG, PNG):</label>
+                    <input type="file" name="resume" accept=".pdf, .jpg, .jpeg, .png" required>
+                </div>                
+
+                <div class="form-group">
+                    <label for="job_description">Upload Job Description (Text File):</label>
+                    <input type="file" name="job_description" accept=".txt" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Display Similarity Score (if available) -->
+        {% if similarity_score is not none %}
+        <section class="result-section">
+            <h2>Similarity Score</h2>
+            <p>The similarity between the resume and job description is: 
+                 <strong>{{similarity_score}}</strong>
+            </p>
+            <a href="/">Upload Another</a>
+        </section>
+        {% endif %}
+
+        <!-- Footer -->
+        <footer>
+            <p>Need assistance? <a href="mailto:support@example.com">Contact Support</a></p>
+            <p>&copy; 2024 Resume Screener. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

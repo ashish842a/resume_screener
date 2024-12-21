@@ -4,24 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume Screener</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="logo" style="font-family: cursive; font-weight: bold;">Resume Screener</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <h1>Resume Screener</h1>
-            <p>Match your resume with the perfect job description</p>
-        </header>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Resume <span id="screening">Screener</span> Application</h1>
+                <p>Match your resume with the perfect job description effortlessly!</p>
+            </div>
+        </section>
 
-        <!-- Form Section -->
-        <section class="form-section">
-            <form action="/screen" method="post" enctype="multipart/form-data">
+        <!-- Resume Upload Section -->
+        <section id="resume-upload">
+            <form id="upload-form" action="/screen" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="resume">Upload Resume (PDF, JPG, JPEG, PNG):</label>
                     <input type="file" name="resume" accept=".pdf, .jpg, .jpeg, .png" required>
-                </div>                
+                </div>
 
                 <div class="form-group">
                     <label for="job_description">Upload Job Description (Text File):</label>
@@ -34,23 +52,44 @@
             </form>
         </section>
 
-        <!-- Display Similarity Score (if available) -->
+        <!-- Display Similarity Score -->
         {% if similarity_score is not none %}
-        <section class="result-section">
+        <section id="result-section">
             <h2>Similarity Score</h2>
             <p>The similarity between the resume and job description is: 
-                 <strong>{{similarity_score}}</strong>
+                <strong>{{ similarity_score }}</strong>
             </p>
             <a href="/">Upload Another</a>
         </section>
         {% endif %}
 
-        <!-- Footer -->
-        <footer>
-            <p>Need assistance? <a href="mailto:support@example.com">Contact Support</a></p>
-            <p>&copy; 2024 Resume Screener. All Rights Reserved.</p>
-        </footer>
-    </div>
+        <!-- About Us Section -->
+        <section id="about" class="content-section">
+            <h2>About Us</h2>
+            <p>
+                Welcome to the Resume Screener Application! Our platform leverages the power of advanced text analysis and machine 
+                learning algorithms to evaluate resumes and job descriptions, ensuring a perfect match. Designed for recruiters and 
+                job seekers alike, this tool simplifies the hiring process and maximizes efficiency.
+            </p>
+            <p>
+                Whether you’re looking to optimize your job application or streamline resume screening for your organization, our 
+                tool provides accurate and actionable results. With a user-friendly interface and reliable performance, we bridge the 
+                gap between job seekers and their dream opportunities.
+            </p>
+        </section>
 
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Resume Screener. All Rights Reserved.</p>
+            <p>
+                Built by <a href="https://github.com/ashish842a" target="_blank">Ashish Kumar</a>.
+            </p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
