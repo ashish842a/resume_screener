@@ -3,9 +3,11 @@ import easyocr
 import os
 from pdf2image import convert_from_path
 from sentence_transformers import SentenceTransformer, util
+import numpy as np
 
 # Load the Sentence Transformer model
 model = SentenceTransformer('all-MiniLM-L6-v2')
+# model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
 
 # Initialize EasyOCR Reader
 ocr_reader = easyocr.Reader(['en'])
@@ -30,19 +32,35 @@ def extract_text_from_pdf_as_image(pdf_path):
     """Convert PDF to images and use EasyOCR to extract text."""
     try:
         # Convert each page of the PDF to an image using pdf2image
-        images = convert_from_path(pdf_path)
+        # Get Poppler path from environment variable
+        # poppler_path = os.getenv('POPLER_PATH', None)
+        # print("path",poppler_path)
+        
+        # if poppler_path is None:
+        #     raise EnvironmentError("Poppler path not set in environment variables")
+
+        # # Convert each page of the PDF to an image using pdf2image
+        # images = convert_from_path(pdf_path, poppler_path=poppler_path)
+        images = convert_from_path(pdf_path, poppler_path=r'D:\software\Release-24.08.0-0\poppler-24.08.0\Library\bin')
         text = ''
+        
         for image in images:
+            # Convert the PIL image to a numpy array
+            image_np = np.array(image)
+
             # Use EasyOCR to extract text from each image
-            result = ocr_reader.readtext(image)
+            result = ocr_reader.readtext(image_np)
+            
             # Combine all text extracted from the image
             text += ' '.join([item[1] for item in result])
-        
+
+            # print("text img", text)
+
         return text if text else None
     except Exception as e:
         print(f"Error extracting text from PDF as image: {str(e)}")
         return None
-
+    
 def extract_text_from_image(image_path):
     """Extract text content from an image (JPG, JPEG, PNG) using EasyOCR."""
     try:
@@ -82,4 +100,8 @@ def screen_resume(file_path, job_description):
         return "Error: Unable to extract text from resume."
 
     similarity_score = calculate_similarity(resume_text, job_description)
-    return similarity_score
+    # Convert the similarity score to a percentage (range: 0-100)
+    similarity_percentage = similarity_score * 100
+    similarity_percentage = f"{similarity_percentage:.2f}%"
+
+    return similarity_percentage

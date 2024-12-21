@@ -76,6 +76,7 @@ def screen():
         os.remove(resume_path)
         os.remove(job_description_path)
         return jsonify({"error": str(e)}), 500
+    
 # Run the application in production
 if __name__ == '__main__':
     # Get the port from environment variable or default to 5000
