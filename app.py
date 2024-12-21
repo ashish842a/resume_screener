@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # Set environment variables or use defaults for production
 UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER', 'uploads')  # Set a default path or use environment variable
-ALLOWED_EXTENSIONS = {'pdf', 'txt'}
+ALLOWED_EXTENSIONS = {'pdf','jpg','jpeg','png', 'txt'}
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -57,16 +57,25 @@ def screen():
         with open(job_description_path, 'r') as f:
             job_description = f.read()
     except Exception as e:
+        # Clean up the uploaded files before returning an error
+        os.remove(resume_path)
+        os.remove(job_description_path)
         return jsonify({"error": f"Failed to read job description file: {str(e)}"}), 500
 
     # Calculate similarity
     try:
         similarity_score = screen_resume(resume_path, job_description)
+        # Clean up the uploaded files after processing
+        os.remove(resume_path)
+        os.remove(job_description_path)
+        
         # Return the result with similarity score
         return render_template('index.html', similarity_score=similarity_score)
     except Exception as e:
+        # Clean up the uploaded files before returning an error
+        os.remove(resume_path)
+        os.remove(job_description_path)
         return jsonify({"error": str(e)}), 500
-
 # Run the application in production
 if __name__ == '__main__':
     # Get the port from environment variable or default to 5000

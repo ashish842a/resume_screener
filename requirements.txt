@@ -2,3 +2,6 @@ Flask==2.3.2
 sentence-transformers
 pdfplumber==0.5.28
 torch==2.0.1
+easyocr
+pdf2image
+numpy==1.26.3
